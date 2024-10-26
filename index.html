@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeCrafted</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .navbar {
+            background: linear-gradient(90deg, #3a7bd5 0%, #00d2ff 100%);
+        }
+
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: bold;
+            color: white !important;
+        }
+        
+        .nav-link {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            transition: color 0.3s, transform 0.3s;
+            padding: 10px 15px;
+        }
+
+        .nav-link:hover {
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .nav-link:focus {
+            color: #3a7bd5;
+        }
+
+        .contact-btn {
+            background-color: #ffffff;
+            color: #3a7bd5;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: 0.3s;
+            padding: 8px 16px;
+        }
+
+        .contact-btn:hover {
+            background-color: #00d2ff;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-section {
+            background: url('img/hero.jpg') center center/cover no-repeat;
+            color: white;
+            padding: 200px 0;
+        }
+
+        .hero-text-box {
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 20px;
+            max-width: 800px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .about-section {
+            padding: 50px 0;
+        }
+
+        .about-text-box {
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        .about-section span {
+            font-weight: 500;
+            font-style: oblique;
+        }
+
+        .footer {
+            background-color: #3a7bd5;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .carousel-item {
+            height: 600px;
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .modal-header {
+            background-color: #3a7bd5;
+            color: white;
+        }
+        
+        .modal-footer {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">LifeCrafted</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about"><i class="fas fa-info-circle"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#subscribe"><i class="fas fa-envelope"></i> Subscribe</a>
+                    </li>
+                </ul>
+                <button type="button" class="btn contact-btn" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    <i class="fa-solid fa-phone"></i> Contact Us
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero-section text-center">
+        <div class="hero-text-box">
+            <h1>LifeCrafted: Your Journey Awaits</h1>
+            
+            <p><br>Embrace a life where creativity meets wellness. 
+                Join us as we explore inspiring ideas, practical tips, and vibrant stories that empower you to 
+                live authentically and joyfully.
+            </p>
+            <a href="#" class="btn btn-outline-light btn-lg">Get Started</a>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Featured Lifestyle Tips</h2>
+        <div id="lifestyleTipsCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/drink.jpg" class="d-block w-100" alt="Tip 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Stay Hydrated</h5>
+                        <p>Drinking enough water is crucial for your overall health.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/gym.jpg" class="d-block w-100" alt="Tip 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Daily Exercise</h5>
+                        <p>Make physical activity a part of your daily routine.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/med.jpg" class="d-block w-100" alt="Tip 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Meditation</h5>
+                        <p>Practice mindfulness to improve mental clarity and reduce stress.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#lifestyleTipsCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#lifestyleTipsCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Latest Articles</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/exercise.jpg" class="card-img-top" alt="Lifestyle 1">
+                    <div class="card-body">
+                        <h5 class="card-title">10 Exercises to Tone Every Inch of Your Body</h5>
+                        <p class="card-text">Check out the 10 exercises you can do for ultimate fitness. Combine them into a routine for a workout that’s simple but powerful and sure to keep you in shape for the rest of your life.</p>
+                        <a href="https://www.healthline.com/health/fitness-exercise/10-best-exercises-everyday" target="_blank" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/fashion.jpg" class="card-img-top" alt="Lifestyle 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Fashion Trends to Watch</h5>
+                        <p class="card-text">Stay ahead with the latest fashion insights and styles.</p>
+                        <a href="https://www.gelato.com/blog/gen-z-fashion-trends" target="_blank" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="img/zen.jpg" class="card-img-top" alt="Lifestyle 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Mindfulness: Finding Your Zen</h5>
+                        <p class="card-text">Explore techniques to bring peace and clarity to your mind.</p>
+                        <a href="https://www.bondfire.in/Blog-Details/finding-your-zen-a-beginners-guide-to-practicing-mindfulness" target="_blank" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="container mt-5 about-section">
+        <h2 class="text-center mb-4">About Us</h2>
+        <div class="about-text-box">
+            <p class="text-center">
+                Welcome to <span>LifeCrafted</span>, where we believe that every moment is an opportunity to design a life filled with purpose and joy. Our mission is to inspire you to embrace a lifestyle that celebrates well-being, creativity, and authenticity.
+                <br><br>
+                At LifeCrafted, we curate a wealth of resources, tips, and stories that empower you to cultivate healthy habits, explore new experiences, and connect with like-minded individuals. From wellness tips and mindful living to fashion insights and travel adventures, we are here to help you craft the life you’ve always dreamed of.
+                <br><br>
+                Join us on this journey to discover the art of living fully, savoring each moment, and creating a vibrant life that reflects who you truly are. Together, let’s craft a lifestyle that brings happiness, balance, and fulfillment.
+            </p>
+        </div>
+    </div>
+
+    <div id="subscribe" class="bg-light py-5">
+        <div class="container">
+            <article class="text-center">
+                <h3>Subscribe for the Latest Article Updates</h3>
+                <form class="row justify-content-center g-3 mt-4" id="subscribeForm">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" id="subsname" placeholder="First Name">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="email" class="form-control" id="subsemail" placeholder="Email">
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-dark w-100" id="subscribeBtn">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+                <div id="subscribeNotification" class="alert alert-success d-none mt-3" role="alert" style="background-color: rgba(0, 0, 0, 0.8); color: white; max-width: 800px; margin: 0 auto;">
+                    Thank you for subscribing!
+                </div>
+            </article>
+        </div>
+    </div>
+    
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="contactemail" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="contactname" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="contactmessage" rows="3" placeholder="Type your message..." required></textarea>
+                        </div>
+                        <div id="notification" class="alert alert-success d-none" role="alert">
+                            Your message has been sent successfully!
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="sendBtn">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 LifeCrafted. All rights reserved.</p>
+        <p>Adnan Alvito Mustaqim - 535230216</p>
+    </div>
+
+    <script>
+        document.getElementById('sendBtn').addEventListener('click', function() {
+            var name = document.getElementById('contactname').value.trim();
+            var email = document.getElementById('contactemail').value.trim();
+            var message = document.getElementById('contactmessage').value.trim();
+            if (name === '' || email === '' || message === '') {
+                alert('Please fill in both your name, email, and message');
+                return; 
+            }
+
+            var notification = document.getElementById('notification');
+            notification.classList.remove('d-none');
+            document.getElementById('contactForm').reset();
+            setTimeout(function() {
+                notification.classList.add('d-none');
+            }, 3000);
+        });
+    
+        var contactModal = document.getElementById('contactModal');
+        contactModal.addEventListener('hidden.bs.modal', function () {
+            var notification = document.getElementById('notification');
+            notification.classList.add('d-none');
+        });
+
+    </script>
+
+    <script>
+        document.getElementById('subscribeBtn').addEventListener('click', function() {
+            var name = document.getElementById('subsname').value.trim();
+            var email = document.getElementById('subsemail').value.trim();
+            var subscribeNotification = document.getElementById('subscribeNotification');
+
+            if (name === '' || email === '') {
+                alert('Please fill in both your name and email.');
+                return; 
+            }
+            subscribeNotification.classList.remove('d-none');
+            
+            document.getElementById('subscribeForm').reset();
+
+            setTimeout(function() {
+                subscribeNotification.classList.add('d-none');
+            }, 3000);
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
